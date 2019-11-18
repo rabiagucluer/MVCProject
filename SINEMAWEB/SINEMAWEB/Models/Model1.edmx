@@ -1,0 +1,1207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SINEMADBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bankatb">
+          <Key>
+            <PropertyRef Name="bankaid" />
+          </Key>
+          <Property Name="bankaid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hesapno" Type="decimal" Precision="16" Scale="0" />
+          <Property Name="sonkullanmatarih" Type="datetime" />
+          <Property Name="guvenlikkodu" Type="decimal" Precision="3" Scale="0" />
+          <Property Name="ibanno" Type="smallint" />
+          <Property Name="bankaadi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="biletdurumtb">
+          <Key>
+            <PropertyRef Name="durumid" />
+          </Key>
+          <Property Name="durumid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="durum" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="bilettb">
+          <Key>
+            <PropertyRef Name="biletid" />
+          </Key>
+          <Property Name="biletid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kayittarih" Type="datetime" />
+          <Property Name="uyeid" Type="smallint" />
+          <Property Name="biletkayittarih" Type="datetime" />
+          <Property Name="filmid" Type="smallint" />
+          <Property Name="sahneid" Type="smallint" />
+          <Property Name="koltukid" Type="smallint" />
+          <Property Name="biletdurumid" Type="smallint" />
+          <Property Name="bankaid" Type="smallint" />
+          <Property Name="gorevliid" Type="smallint" />
+        </EntityType>
+        <EntityType Name="bloktb">
+          <Key>
+            <PropertyRef Name="blokid" />
+          </Key>
+          <Property Name="blokid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blokturu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="filmtb">
+          <Key>
+            <PropertyRef Name="filmid" />
+          </Key>
+          <Property Name="filmid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filmadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="filmsüre" Type="datetime" />
+          <Property Name="filmtürü" Type="smallint" />
+          <Property Name="filmyonetmeni" Type="nvarchar" MaxLength="50" />
+          <Property Name="filmoyunculari" Type="nvarchar" MaxLength="50" />
+          <Property Name="filmaciklama" Type="nvarchar" MaxLength="150" />
+          <Property Name="filmfoto" Type="nvarchar" MaxLength="150" />
+          <Property Name="seansid" Type="smallint" />
+          <Property Name="salon1" Type="smallint" />
+          <Property Name="salon2" Type="smallint" />
+        </EntityType>
+        <EntityType Name="filmturutb">
+          <Key>
+            <PropertyRef Name="turid" />
+          </Key>
+          <Property Name="turid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filmturu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fiyat">
+          <Key>
+            <PropertyRef Name="fiyatid" />
+          </Key>
+          <Property Name="fiyatid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="turid" Type="smallint" />
+          <Property Name="fiyat" Type="money" />
+        </EntityType>
+        <EntityType Name="gorevlilertb">
+          <Key>
+            <PropertyRef Name="gorevliid" />
+          </Key>
+          <Property Name="gorevliid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gorevliad" Type="nvarchar" MaxLength="50" />
+          <Property Name="gorevlisoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="gorevlitel" Type="decimal" Precision="11" Scale="0" />
+        </EntityType>
+        <EntityType Name="iletisimtb">
+          <Key>
+            <PropertyRef Name="iletisimid" />
+          </Key>
+          <Property Name="iletisimid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adres" Type="nvarchar" MaxLength="100" />
+          <Property Name="telefon" Type="decimal" Precision="11" Scale="0" />
+          <Property Name="mail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="koltuktb">
+          <Key>
+            <PropertyRef Name="koltukid" />
+          </Key>
+          <Property Name="koltukid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blokid" Type="smallint" />
+          <Property Name="sahneid" Type="smallint" />
+          <Property Name="koltuknumarasi" Type="smallint" />
+        </EntityType>
+        <EntityType Name="kullanicituru">
+          <Key>
+            <PropertyRef Name="kulturid" />
+          </Key>
+          <Property Name="kulturid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanicitur" Type="nvarchar" MaxLength="50" />
+          <Property Name="indirimorani" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="mesajkututb">
+          <Key>
+            <PropertyRef Name="mesajid" />
+          </Key>
+          <Property Name="mesajid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="konu" Type="nvarchar" MaxLength="50" />
+          <Property Name="mesaj" Type="nvarchar" MaxLength="150" />
+          <Property Name="uyeid" Type="smallint" />
+          <Property Name="mesajtarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="salon">
+          <Key>
+            <PropertyRef Name="salonid" />
+          </Key>
+          <Property Name="salonid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="seanstb">
+          <Key>
+            <PropertyRef Name="seansid" />
+          </Key>
+          <Property Name="seansid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filmyayintarihi" Type="datetime" />
+          <Property Name="filmsonyayintarihi" Type="datetime" />
+          <Property Name="saat1" Type="time" Precision="7" />
+          <Property Name="saat2" Type="time" Precision="7" />
+          <Property Name="saat3" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="uyetb">
+          <Key>
+            <PropertyRef Name="uyeid" />
+          </Key>
+          <Property Name="uyeid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uyetelefon" Type="decimal" Precision="11" Scale="0" />
+          <Property Name="sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kullaniciturid" Type="smallint" />
+          <Property Name="tcno" Type="decimal" Precision="11" Scale="0" />
+        </EntityType>
+        <EntityType Name="yorumtb">
+          <Key>
+            <PropertyRef Name="yorumid" />
+          </Key>
+          <Property Name="yorumid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="yorum" Type="nvarchar" MaxLength="150" />
+          <Property Name="uyeid" Type="smallint" />
+          <Property Name="yorumtarih" Type="datetime" />
+          <Property Name="filmid" Type="smallint" />
+        </EntityType>
+        <Association Name="FK_bilettb_bankatb">
+          <End Role="bankatb" Type="Self.bankatb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bankatb">
+              <PropertyRef Name="bankaid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="bankaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_biletdurumtb1">
+          <End Role="biletdurumtb" Type="Self.biletdurumtb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="biletdurumtb">
+              <PropertyRef Name="durumid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="biletdurumid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_gorevlilertb">
+          <End Role="gorevlilertb" Type="Self.gorevlilertb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevlilertb">
+              <PropertyRef Name="gorevliid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="gorevliid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_koltuktb">
+          <End Role="koltuktb" Type="Self.koltuktb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="koltuktb">
+              <PropertyRef Name="koltukid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="koltukid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_salon">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="sahneid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_uyetb">
+          <End Role="uyetb" Type="Self.uyetb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uyetb">
+              <PropertyRef Name="uyeid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="uyeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_filmturutb">
+          <End Role="filmturutb" Type="Self.filmturutb" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filmturutb">
+              <PropertyRef Name="turid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="filmtürü" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_salon">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="salon1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_salon1">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="salon2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_seanstb">
+          <End Role="seanstb" Type="Self.seanstb" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seanstb">
+              <PropertyRef Name="seansid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="seansid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fiyat_filmturutb">
+          <End Role="filmturutb" Type="Self.filmturutb" Multiplicity="0..1" />
+          <End Role="fiyat" Type="Self.fiyat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filmturutb">
+              <PropertyRef Name="turid" />
+            </Principal>
+            <Dependent Role="fiyat">
+              <PropertyRef Name="turid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fiyat_kullanicituru">
+          <End Role="kullanicituru" Type="Self.kullanicituru" Multiplicity="0..1" />
+          <End Role="fiyat" Type="Self.fiyat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicituru">
+              <PropertyRef Name="kulturid" />
+            </Principal>
+            <Dependent Role="fiyat">
+              <PropertyRef Name="turid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fiyat_kullanicituru1">
+          <End Role="kullanicituru" Type="Self.kullanicituru" Multiplicity="0..1" />
+          <End Role="fiyat" Type="Self.fiyat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicituru">
+              <PropertyRef Name="kulturid" />
+            </Principal>
+            <Dependent Role="fiyat">
+              <PropertyRef Name="turid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_koltuktb_bloktb">
+          <End Role="bloktb" Type="Self.bloktb" Multiplicity="0..1" />
+          <End Role="koltuktb" Type="Self.koltuktb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bloktb">
+              <PropertyRef Name="blokid" />
+            </Principal>
+            <Dependent Role="koltuktb">
+              <PropertyRef Name="blokid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_koltuktb_salon">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="koltuktb" Type="Self.koltuktb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="koltuktb">
+              <PropertyRef Name="sahneid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mesajkututb_uyetb">
+          <End Role="uyetb" Type="Self.uyetb" Multiplicity="0..1" />
+          <End Role="mesajkututb" Type="Self.mesajkututb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uyetb">
+              <PropertyRef Name="uyeid" />
+            </Principal>
+            <Dependent Role="mesajkututb">
+              <PropertyRef Name="uyeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_yorumtb_filmtb">
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="0..1" />
+          <End Role="yorumtb" Type="Self.yorumtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filmtb">
+              <PropertyRef Name="filmid" />
+            </Principal>
+            <Dependent Role="yorumtb">
+              <PropertyRef Name="filmid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_yorumtb_uyetb">
+          <End Role="uyetb" Type="Self.uyetb" Multiplicity="0..1" />
+          <End Role="yorumtb" Type="Self.yorumtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uyetb">
+              <PropertyRef Name="uyeid" />
+            </Principal>
+            <Dependent Role="yorumtb">
+              <PropertyRef Name="uyeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SINEMADBModelStoreContainer">
+          <EntitySet Name="bankatb" EntityType="Self.bankatb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="biletdurumtb" EntityType="Self.biletdurumtb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bilettb" EntityType="Self.bilettb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bloktb" EntityType="Self.bloktb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="filmtb" EntityType="Self.filmtb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="filmturutb" EntityType="Self.filmturutb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fiyat" EntityType="Self.fiyat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gorevlilertb" EntityType="Self.gorevlilertb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iletisimtb" EntityType="Self.iletisimtb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="koltuktb" EntityType="Self.koltuktb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kullanicituru" EntityType="Self.kullanicituru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mesajkututb" EntityType="Self.mesajkututb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="salon" EntityType="Self.salon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="seanstb" EntityType="Self.seanstb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uyetb" EntityType="Self.uyetb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="yorumtb" EntityType="Self.yorumtb" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_bilettb_bankatb" Association="Self.FK_bilettb_bankatb">
+            <End Role="bankatb" EntitySet="bankatb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_biletdurumtb1" Association="Self.FK_bilettb_biletdurumtb1">
+            <End Role="biletdurumtb" EntitySet="biletdurumtb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_gorevlilertb" Association="Self.FK_bilettb_gorevlilertb">
+            <End Role="gorevlilertb" EntitySet="gorevlilertb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_koltuktb" Association="Self.FK_bilettb_koltuktb">
+            <End Role="koltuktb" EntitySet="koltuktb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_salon" Association="Self.FK_bilettb_salon">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_uyetb" Association="Self.FK_bilettb_uyetb">
+            <End Role="uyetb" EntitySet="uyetb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_filmturutb" Association="Self.FK_filmtb_filmturutb">
+            <End Role="filmturutb" EntitySet="filmturutb" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_salon" Association="Self.FK_filmtb_salon">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_salon1" Association="Self.FK_filmtb_salon1">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_seanstb" Association="Self.FK_filmtb_seanstb">
+            <End Role="seanstb" EntitySet="seanstb" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fiyat_filmturutb" Association="Self.FK_fiyat_filmturutb">
+            <End Role="filmturutb" EntitySet="filmturutb" />
+            <End Role="fiyat" EntitySet="fiyat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fiyat_kullanicituru" Association="Self.FK_fiyat_kullanicituru">
+            <End Role="kullanicituru" EntitySet="kullanicituru" />
+            <End Role="fiyat" EntitySet="fiyat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fiyat_kullanicituru1" Association="Self.FK_fiyat_kullanicituru1">
+            <End Role="kullanicituru" EntitySet="kullanicituru" />
+            <End Role="fiyat" EntitySet="fiyat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_koltuktb_bloktb" Association="Self.FK_koltuktb_bloktb">
+            <End Role="bloktb" EntitySet="bloktb" />
+            <End Role="koltuktb" EntitySet="koltuktb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_koltuktb_salon" Association="Self.FK_koltuktb_salon">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="koltuktb" EntitySet="koltuktb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mesajkututb_uyetb" Association="Self.FK_mesajkututb_uyetb">
+            <End Role="uyetb" EntitySet="uyetb" />
+            <End Role="mesajkututb" EntitySet="mesajkututb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_yorumtb_filmtb" Association="Self.FK_yorumtb_filmtb">
+            <End Role="filmtb" EntitySet="filmtb" />
+            <End Role="yorumtb" EntitySet="yorumtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_yorumtb_uyetb" Association="Self.FK_yorumtb_uyetb">
+            <End Role="uyetb" EntitySet="uyetb" />
+            <End Role="yorumtb" EntitySet="yorumtb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SINEMADBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bankatb">
+          <Key>
+            <PropertyRef Name="bankaid" />
+          </Key>
+          <Property Name="bankaid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hesapno" Type="Decimal" Precision="16" Scale="0" />
+          <Property Name="sonkullanmatarih" Type="DateTime" Precision="3" />
+          <Property Name="guvenlikkodu" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="ibanno" Type="Int16" />
+          <Property Name="bankaadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="bilettb" Relationship="Self.FK_bilettb_bankatb" FromRole="bankatb" ToRole="bilettb" />
+        </EntityType>
+        <EntityType Name="biletdurumtb">
+          <Key>
+            <PropertyRef Name="durumid" />
+          </Key>
+          <Property Name="durumid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="bilettb" Relationship="Self.FK_bilettb_biletdurumtb1" FromRole="biletdurumtb" ToRole="bilettb" />
+        </EntityType>
+        <EntityType Name="bilettb">
+          <Key>
+            <PropertyRef Name="biletid" />
+          </Key>
+          <Property Name="biletid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kayittarih" Type="DateTime" Precision="3" />
+          <Property Name="uyeid" Type="Int16" />
+          <Property Name="biletkayittarih" Type="DateTime" Precision="3" />
+          <Property Name="filmid" Type="Int16" />
+          <Property Name="sahneid" Type="Int16" />
+          <Property Name="koltukid" Type="Int16" />
+          <Property Name="biletdurumid" Type="Int16" />
+          <Property Name="bankaid" Type="Int16" />
+          <Property Name="gorevliid" Type="Int16" />
+          <NavigationProperty Name="bankatb" Relationship="Self.FK_bilettb_bankatb" FromRole="bilettb" ToRole="bankatb" />
+          <NavigationProperty Name="biletdurumtb" Relationship="Self.FK_bilettb_biletdurumtb1" FromRole="bilettb" ToRole="biletdurumtb" />
+          <NavigationProperty Name="gorevlilertb" Relationship="Self.FK_bilettb_gorevlilertb" FromRole="bilettb" ToRole="gorevlilertb" />
+          <NavigationProperty Name="koltuktb" Relationship="Self.FK_bilettb_koltuktb" FromRole="bilettb" ToRole="koltuktb" />
+          <NavigationProperty Name="salon" Relationship="Self.FK_bilettb_salon" FromRole="bilettb" ToRole="salon" />
+          <NavigationProperty Name="uyetb" Relationship="Self.FK_bilettb_uyetb" FromRole="bilettb" ToRole="uyetb" />
+        </EntityType>
+        <EntityType Name="bloktb">
+          <Key>
+            <PropertyRef Name="blokid" />
+          </Key>
+          <Property Name="blokid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blokturu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="koltuktb" Relationship="Self.FK_koltuktb_bloktb" FromRole="bloktb" ToRole="koltuktb" />
+        </EntityType>
+        <EntityType Name="filmtb">
+          <Key>
+            <PropertyRef Name="filmid" />
+          </Key>
+          <Property Name="filmid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filmadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filmsüre" Type="DateTime" Precision="3" />
+          <Property Name="filmtürü" Type="Int16" />
+          <Property Name="filmyonetmeni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filmoyunculari" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filmaciklama" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="filmfoto" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="seansid" Type="Int16" />
+          <Property Name="salon1" Type="Int16" />
+          <Property Name="salon2" Type="Int16" />
+          <NavigationProperty Name="filmturutb" Relationship="Self.FK_filmtb_filmturutb" FromRole="filmtb" ToRole="filmturutb" />
+          <NavigationProperty Name="salon" Relationship="Self.FK_filmtb_salon" FromRole="filmtb" ToRole="salon" />
+          <NavigationProperty Name="salon3" Relationship="Self.FK_filmtb_salon1" FromRole="filmtb" ToRole="salon" />
+          <NavigationProperty Name="seanstb" Relationship="Self.FK_filmtb_seanstb" FromRole="filmtb" ToRole="seanstb" />
+          <NavigationProperty Name="yorumtb" Relationship="Self.FK_yorumtb_filmtb" FromRole="filmtb" ToRole="yorumtb" />
+        </EntityType>
+        <EntityType Name="filmturutb">
+          <Key>
+            <PropertyRef Name="turid" />
+          </Key>
+          <Property Name="turid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filmturu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="filmtb" Relationship="Self.FK_filmtb_filmturutb" FromRole="filmturutb" ToRole="filmtb" />
+          <NavigationProperty Name="fiyat" Relationship="Self.FK_fiyat_filmturutb" FromRole="filmturutb" ToRole="fiyat" />
+        </EntityType>
+        <EntityType Name="fiyat">
+          <Key>
+            <PropertyRef Name="fiyatid" />
+          </Key>
+          <Property Name="fiyatid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="turid" Type="Int16" />
+          <Property Name="fiyat1" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="filmturutb" Relationship="Self.FK_fiyat_filmturutb" FromRole="fiyat" ToRole="filmturutb" />
+          <NavigationProperty Name="kullanicituru" Relationship="Self.FK_fiyat_kullanicituru" FromRole="fiyat" ToRole="kullanicituru" />
+          <NavigationProperty Name="kullanicituru1" Relationship="Self.FK_fiyat_kullanicituru1" FromRole="fiyat" ToRole="kullanicituru" />
+        </EntityType>
+        <EntityType Name="gorevlilertb">
+          <Key>
+            <PropertyRef Name="gorevliid" />
+          </Key>
+          <Property Name="gorevliid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gorevliad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gorevlisoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gorevlitel" Type="Decimal" Precision="11" Scale="0" />
+          <NavigationProperty Name="bilettb" Relationship="Self.FK_bilettb_gorevlilertb" FromRole="gorevlilertb" ToRole="bilettb" />
+        </EntityType>
+        <EntityType Name="iletisimtb">
+          <Key>
+            <PropertyRef Name="iletisimid" />
+          </Key>
+          <Property Name="iletisimid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="koltuktb">
+          <Key>
+            <PropertyRef Name="koltukid" />
+          </Key>
+          <Property Name="koltukid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blokid" Type="Int16" />
+          <Property Name="sahneid" Type="Int16" />
+          <Property Name="koltuknumarasi" Type="Int16" />
+          <NavigationProperty Name="bilettb" Relationship="Self.FK_bilettb_koltuktb" FromRole="koltuktb" ToRole="bilettb" />
+          <NavigationProperty Name="bloktb" Relationship="Self.FK_koltuktb_bloktb" FromRole="koltuktb" ToRole="bloktb" />
+          <NavigationProperty Name="salon" Relationship="Self.FK_koltuktb_salon" FromRole="koltuktb" ToRole="salon" />
+        </EntityType>
+        <EntityType Name="kullanicituru">
+          <Key>
+            <PropertyRef Name="kulturid" />
+          </Key>
+          <Property Name="kulturid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanicitur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="indirimorani" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="fiyat" Relationship="Self.FK_fiyat_kullanicituru" FromRole="kullanicituru" ToRole="fiyat" />
+          <NavigationProperty Name="fiyat1" Relationship="Self.FK_fiyat_kullanicituru1" FromRole="kullanicituru" ToRole="fiyat" />
+        </EntityType>
+        <EntityType Name="mesajkututb">
+          <Key>
+            <PropertyRef Name="mesajid" />
+          </Key>
+          <Property Name="mesajid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mesaj" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="uyeid" Type="Int16" />
+          <Property Name="mesajtarihi" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="uyetb" Relationship="Self.FK_mesajkututb_uyetb" FromRole="mesajkututb" ToRole="uyetb" />
+        </EntityType>
+        <EntityType Name="salon">
+          <Key>
+            <PropertyRef Name="salonid" />
+          </Key>
+          <Property Name="salonid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="bilettb" Relationship="Self.FK_bilettb_salon" FromRole="salon" ToRole="bilettb" />
+          <NavigationProperty Name="filmtb" Relationship="Self.FK_filmtb_salon" FromRole="salon" ToRole="filmtb" />
+          <NavigationProperty Name="filmtb1" Relationship="Self.FK_filmtb_salon1" FromRole="salon" ToRole="filmtb" />
+          <NavigationProperty Name="koltuktb" Relationship="Self.FK_koltuktb_salon" FromRole="salon" ToRole="koltuktb" />
+        </EntityType>
+        <EntityType Name="seanstb">
+          <Key>
+            <PropertyRef Name="seansid" />
+          </Key>
+          <Property Name="seansid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filmyayintarihi" Type="DateTime" Precision="3" />
+          <Property Name="filmsonyayintarihi" Type="DateTime" Precision="3" />
+          <Property Name="saat1" Type="Time" Precision="7" />
+          <Property Name="saat2" Type="Time" Precision="7" />
+          <Property Name="saat3" Type="Time" Precision="7" />
+          <NavigationProperty Name="filmtb" Relationship="Self.FK_filmtb_seanstb" FromRole="seanstb" ToRole="filmtb" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="uyetb">
+          <Key>
+            <PropertyRef Name="uyeid" />
+          </Key>
+          <Property Name="uyeid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uyetelefon" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kullaniciturid" Type="Int16" />
+          <Property Name="tcno" Type="Decimal" Precision="11" Scale="0" />
+          <NavigationProperty Name="bilettb" Relationship="Self.FK_bilettb_uyetb" FromRole="uyetb" ToRole="bilettb" />
+          <NavigationProperty Name="mesajkututb" Relationship="Self.FK_mesajkututb_uyetb" FromRole="uyetb" ToRole="mesajkututb" />
+          <NavigationProperty Name="yorumtb" Relationship="Self.FK_yorumtb_uyetb" FromRole="uyetb" ToRole="yorumtb" />
+        </EntityType>
+        <EntityType Name="yorumtb">
+          <Key>
+            <PropertyRef Name="yorumid" />
+          </Key>
+          <Property Name="yorumid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yorum" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="uyeid" Type="Int16" />
+          <Property Name="yorumtarih" Type="DateTime" Precision="3" />
+          <Property Name="filmid" Type="Int16" />
+          <NavigationProperty Name="filmtb" Relationship="Self.FK_yorumtb_filmtb" FromRole="yorumtb" ToRole="filmtb" />
+          <NavigationProperty Name="uyetb" Relationship="Self.FK_yorumtb_uyetb" FromRole="yorumtb" ToRole="uyetb" />
+        </EntityType>
+        <Association Name="FK_bilettb_bankatb">
+          <End Role="bankatb" Type="Self.bankatb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bankatb">
+              <PropertyRef Name="bankaid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="bankaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_biletdurumtb1">
+          <End Role="biletdurumtb" Type="Self.biletdurumtb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="biletdurumtb">
+              <PropertyRef Name="durumid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="biletdurumid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_gorevlilertb">
+          <End Role="gorevlilertb" Type="Self.gorevlilertb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevlilertb">
+              <PropertyRef Name="gorevliid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="gorevliid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_koltuktb">
+          <End Role="koltuktb" Type="Self.koltuktb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="koltuktb">
+              <PropertyRef Name="koltukid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="koltukid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_salon">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="sahneid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bilettb_uyetb">
+          <End Role="uyetb" Type="Self.uyetb" Multiplicity="0..1" />
+          <End Role="bilettb" Type="Self.bilettb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uyetb">
+              <PropertyRef Name="uyeid" />
+            </Principal>
+            <Dependent Role="bilettb">
+              <PropertyRef Name="uyeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_koltuktb_bloktb">
+          <End Role="bloktb" Type="Self.bloktb" Multiplicity="0..1" />
+          <End Role="koltuktb" Type="Self.koltuktb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bloktb">
+              <PropertyRef Name="blokid" />
+            </Principal>
+            <Dependent Role="koltuktb">
+              <PropertyRef Name="blokid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_filmturutb">
+          <End Role="filmturutb" Type="Self.filmturutb" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filmturutb">
+              <PropertyRef Name="turid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="filmtürü" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_salon">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="salon1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_salon1">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="salon2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filmtb_seanstb">
+          <End Role="seanstb" Type="Self.seanstb" Multiplicity="0..1" />
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seanstb">
+              <PropertyRef Name="seansid" />
+            </Principal>
+            <Dependent Role="filmtb">
+              <PropertyRef Name="seansid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_yorumtb_filmtb">
+          <End Role="filmtb" Type="Self.filmtb" Multiplicity="0..1" />
+          <End Role="yorumtb" Type="Self.yorumtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filmtb">
+              <PropertyRef Name="filmid" />
+            </Principal>
+            <Dependent Role="yorumtb">
+              <PropertyRef Name="filmid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fiyat_filmturutb">
+          <End Role="filmturutb" Type="Self.filmturutb" Multiplicity="0..1" />
+          <End Role="fiyat" Type="Self.fiyat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filmturutb">
+              <PropertyRef Name="turid" />
+            </Principal>
+            <Dependent Role="fiyat">
+              <PropertyRef Name="turid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fiyat_kullanicituru">
+          <End Role="kullanicituru" Type="Self.kullanicituru" Multiplicity="0..1" />
+          <End Role="fiyat" Type="Self.fiyat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicituru">
+              <PropertyRef Name="kulturid" />
+            </Principal>
+            <Dependent Role="fiyat">
+              <PropertyRef Name="turid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fiyat_kullanicituru1">
+          <End Role="kullanicituru" Type="Self.kullanicituru" Multiplicity="0..1" />
+          <End Role="fiyat" Type="Self.fiyat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicituru">
+              <PropertyRef Name="kulturid" />
+            </Principal>
+            <Dependent Role="fiyat">
+              <PropertyRef Name="turid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_koltuktb_salon">
+          <End Role="salon" Type="Self.salon" Multiplicity="0..1" />
+          <End Role="koltuktb" Type="Self.koltuktb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salon">
+              <PropertyRef Name="salonid" />
+            </Principal>
+            <Dependent Role="koltuktb">
+              <PropertyRef Name="sahneid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mesajkututb_uyetb">
+          <End Role="uyetb" Type="Self.uyetb" Multiplicity="0..1" />
+          <End Role="mesajkututb" Type="Self.mesajkututb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uyetb">
+              <PropertyRef Name="uyeid" />
+            </Principal>
+            <Dependent Role="mesajkututb">
+              <PropertyRef Name="uyeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_yorumtb_uyetb">
+          <End Role="uyetb" Type="Self.uyetb" Multiplicity="0..1" />
+          <End Role="yorumtb" Type="Self.yorumtb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uyetb">
+              <PropertyRef Name="uyeid" />
+            </Principal>
+            <Dependent Role="yorumtb">
+              <PropertyRef Name="uyeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SINEMADBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bankatb" EntityType="Self.bankatb" />
+          <EntitySet Name="biletdurumtb" EntityType="Self.biletdurumtb" />
+          <EntitySet Name="bilettb" EntityType="Self.bilettb" />
+          <EntitySet Name="bloktb" EntityType="Self.bloktb" />
+          <EntitySet Name="filmtb" EntityType="Self.filmtb" />
+          <EntitySet Name="filmturutb" EntityType="Self.filmturutb" />
+          <EntitySet Name="fiyat" EntityType="Self.fiyat" />
+          <EntitySet Name="gorevlilertb" EntityType="Self.gorevlilertb" />
+          <EntitySet Name="iletisimtb" EntityType="Self.iletisimtb" />
+          <EntitySet Name="koltuktb" EntityType="Self.koltuktb" />
+          <EntitySet Name="kullanicituru" EntityType="Self.kullanicituru" />
+          <EntitySet Name="mesajkututb" EntityType="Self.mesajkututb" />
+          <EntitySet Name="salon" EntityType="Self.salon" />
+          <EntitySet Name="seanstb" EntityType="Self.seanstb" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="uyetb" EntityType="Self.uyetb" />
+          <EntitySet Name="yorumtb" EntityType="Self.yorumtb" />
+          <AssociationSet Name="FK_bilettb_bankatb" Association="Self.FK_bilettb_bankatb">
+            <End Role="bankatb" EntitySet="bankatb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_biletdurumtb1" Association="Self.FK_bilettb_biletdurumtb1">
+            <End Role="biletdurumtb" EntitySet="biletdurumtb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_gorevlilertb" Association="Self.FK_bilettb_gorevlilertb">
+            <End Role="gorevlilertb" EntitySet="gorevlilertb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_koltuktb" Association="Self.FK_bilettb_koltuktb">
+            <End Role="koltuktb" EntitySet="koltuktb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_salon" Association="Self.FK_bilettb_salon">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bilettb_uyetb" Association="Self.FK_bilettb_uyetb">
+            <End Role="uyetb" EntitySet="uyetb" />
+            <End Role="bilettb" EntitySet="bilettb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_koltuktb_bloktb" Association="Self.FK_koltuktb_bloktb">
+            <End Role="bloktb" EntitySet="bloktb" />
+            <End Role="koltuktb" EntitySet="koltuktb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_filmturutb" Association="Self.FK_filmtb_filmturutb">
+            <End Role="filmturutb" EntitySet="filmturutb" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_salon" Association="Self.FK_filmtb_salon">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_salon1" Association="Self.FK_filmtb_salon1">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filmtb_seanstb" Association="Self.FK_filmtb_seanstb">
+            <End Role="seanstb" EntitySet="seanstb" />
+            <End Role="filmtb" EntitySet="filmtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_yorumtb_filmtb" Association="Self.FK_yorumtb_filmtb">
+            <End Role="filmtb" EntitySet="filmtb" />
+            <End Role="yorumtb" EntitySet="yorumtb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fiyat_filmturutb" Association="Self.FK_fiyat_filmturutb">
+            <End Role="filmturutb" EntitySet="filmturutb" />
+            <End Role="fiyat" EntitySet="fiyat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fiyat_kullanicituru" Association="Self.FK_fiyat_kullanicituru">
+            <End Role="kullanicituru" EntitySet="kullanicituru" />
+            <End Role="fiyat" EntitySet="fiyat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fiyat_kullanicituru1" Association="Self.FK_fiyat_kullanicituru1">
+            <End Role="kullanicituru" EntitySet="kullanicituru" />
+            <End Role="fiyat" EntitySet="fiyat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_koltuktb_salon" Association="Self.FK_koltuktb_salon">
+            <End Role="salon" EntitySet="salon" />
+            <End Role="koltuktb" EntitySet="koltuktb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mesajkututb_uyetb" Association="Self.FK_mesajkututb_uyetb">
+            <End Role="uyetb" EntitySet="uyetb" />
+            <End Role="mesajkututb" EntitySet="mesajkututb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_yorumtb_uyetb" Association="Self.FK_yorumtb_uyetb">
+            <End Role="uyetb" EntitySet="uyetb" />
+            <End Role="yorumtb" EntitySet="yorumtb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SINEMADBModelStoreContainer" CdmEntityContainer="SINEMADBEntities">
+          <EntitySetMapping Name="bankatb">
+            <EntityTypeMapping TypeName="SINEMADBModel.bankatb">
+              <MappingFragment StoreEntitySet="bankatb">
+                <ScalarProperty Name="bankaid" ColumnName="bankaid" />
+                <ScalarProperty Name="hesapno" ColumnName="hesapno" />
+                <ScalarProperty Name="sonkullanmatarih" ColumnName="sonkullanmatarih" />
+                <ScalarProperty Name="guvenlikkodu" ColumnName="guvenlikkodu" />
+                <ScalarProperty Name="ibanno" ColumnName="ibanno" />
+                <ScalarProperty Name="bankaadi" ColumnName="bankaadi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="biletdurumtb">
+            <EntityTypeMapping TypeName="SINEMADBModel.biletdurumtb">
+              <MappingFragment StoreEntitySet="biletdurumtb">
+                <ScalarProperty Name="durumid" ColumnName="durumid" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bilettb">
+            <EntityTypeMapping TypeName="SINEMADBModel.bilettb">
+              <MappingFragment StoreEntitySet="bilettb">
+                <ScalarProperty Name="biletid" ColumnName="biletid" />
+                <ScalarProperty Name="kayittarih" ColumnName="kayittarih" />
+                <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+                <ScalarProperty Name="biletkayittarih" ColumnName="biletkayittarih" />
+                <ScalarProperty Name="filmid" ColumnName="filmid" />
+                <ScalarProperty Name="sahneid" ColumnName="sahneid" />
+                <ScalarProperty Name="koltukid" ColumnName="koltukid" />
+                <ScalarProperty Name="biletdurumid" ColumnName="biletdurumid" />
+                <ScalarProperty Name="bankaid" ColumnName="bankaid" />
+                <ScalarProperty Name="gorevliid" ColumnName="gorevliid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bloktb">
+            <EntityTypeMapping TypeName="SINEMADBModel.bloktb">
+              <MappingFragment StoreEntitySet="bloktb">
+                <ScalarProperty Name="blokid" ColumnName="blokid" />
+                <ScalarProperty Name="blokturu" ColumnName="blokturu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filmtb">
+            <EntityTypeMapping TypeName="SINEMADBModel.filmtb">
+              <MappingFragment StoreEntitySet="filmtb">
+                <ScalarProperty Name="filmid" ColumnName="filmid" />
+                <ScalarProperty Name="filmadi" ColumnName="filmadi" />
+                <ScalarProperty Name="filmsüre" ColumnName="filmsüre" />
+                <ScalarProperty Name="filmtürü" ColumnName="filmtürü" />
+                <ScalarProperty Name="filmyonetmeni" ColumnName="filmyonetmeni" />
+                <ScalarProperty Name="filmoyunculari" ColumnName="filmoyunculari" />
+                <ScalarProperty Name="filmaciklama" ColumnName="filmaciklama" />
+                <ScalarProperty Name="filmfoto" ColumnName="filmfoto" />
+                <ScalarProperty Name="seansid" ColumnName="seansid" />
+                <ScalarProperty Name="salon1" ColumnName="salon1" />
+                <ScalarProperty Name="salon2" ColumnName="salon2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filmturutb">
+            <EntityTypeMapping TypeName="SINEMADBModel.filmturutb">
+              <MappingFragment StoreEntitySet="filmturutb">
+                <ScalarProperty Name="turid" ColumnName="turid" />
+                <ScalarProperty Name="filmturu" ColumnName="filmturu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fiyat">
+            <EntityTypeMapping TypeName="SINEMADBModel.fiyat">
+              <MappingFragment StoreEntitySet="fiyat">
+                <ScalarProperty Name="fiyatid" ColumnName="fiyatid" />
+                <ScalarProperty Name="turid" ColumnName="turid" />
+                <ScalarProperty Name="fiyat1" ColumnName="fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorevlilertb">
+            <EntityTypeMapping TypeName="SINEMADBModel.gorevlilertb">
+              <MappingFragment StoreEntitySet="gorevlilertb">
+                <ScalarProperty Name="gorevliid" ColumnName="gorevliid" />
+                <ScalarProperty Name="gorevliad" ColumnName="gorevliad" />
+                <ScalarProperty Name="gorevlisoyad" ColumnName="gorevlisoyad" />
+                <ScalarProperty Name="gorevlitel" ColumnName="gorevlitel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iletisimtb">
+            <EntityTypeMapping TypeName="SINEMADBModel.iletisimtb">
+              <MappingFragment StoreEntitySet="iletisimtb">
+                <ScalarProperty Name="iletisimid" ColumnName="iletisimid" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="koltuktb">
+            <EntityTypeMapping TypeName="SINEMADBModel.koltuktb">
+              <MappingFragment StoreEntitySet="koltuktb">
+                <ScalarProperty Name="koltukid" ColumnName="koltukid" />
+                <ScalarProperty Name="blokid" ColumnName="blokid" />
+                <ScalarProperty Name="sahneid" ColumnName="sahneid" />
+                <ScalarProperty Name="koltuknumarasi" ColumnName="koltuknumarasi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanicituru">
+            <EntityTypeMapping TypeName="SINEMADBModel.kullanicituru">
+              <MappingFragment StoreEntitySet="kullanicituru">
+                <ScalarProperty Name="kulturid" ColumnName="kulturid" />
+                <ScalarProperty Name="kullanicitur" ColumnName="kullanicitur" />
+                <ScalarProperty Name="indirimorani" ColumnName="indirimorani" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mesajkututb">
+            <EntityTypeMapping TypeName="SINEMADBModel.mesajkututb">
+              <MappingFragment StoreEntitySet="mesajkututb">
+                <ScalarProperty Name="mesajid" ColumnName="mesajid" />
+                <ScalarProperty Name="konu" ColumnName="konu" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+                <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+                <ScalarProperty Name="mesajtarihi" ColumnName="mesajtarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salon">
+            <EntityTypeMapping TypeName="SINEMADBModel.salon">
+              <MappingFragment StoreEntitySet="salon">
+                <ScalarProperty Name="salonid" ColumnName="salonid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seanstb">
+            <EntityTypeMapping TypeName="SINEMADBModel.seanstb">
+              <MappingFragment StoreEntitySet="seanstb">
+                <ScalarProperty Name="seansid" ColumnName="seansid" />
+                <ScalarProperty Name="filmyayintarihi" ColumnName="filmyayintarihi" />
+                <ScalarProperty Name="filmsonyayintarihi" ColumnName="filmsonyayintarihi" />
+                <ScalarProperty Name="saat1" ColumnName="saat1" />
+                <ScalarProperty Name="saat2" ColumnName="saat2" />
+                <ScalarProperty Name="saat3" ColumnName="saat3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SINEMADBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uyetb">
+            <EntityTypeMapping TypeName="SINEMADBModel.uyetb">
+              <MappingFragment StoreEntitySet="uyetb">
+                <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="uyetelefon" ColumnName="uyetelefon" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="kullaniciturid" ColumnName="kullaniciturid" />
+                <ScalarProperty Name="tcno" ColumnName="tcno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yorumtb">
+            <EntityTypeMapping TypeName="SINEMADBModel.yorumtb">
+              <MappingFragment StoreEntitySet="yorumtb">
+                <ScalarProperty Name="yorumid" ColumnName="yorumid" />
+                <ScalarProperty Name="yorum" ColumnName="yorum" />
+                <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+                <ScalarProperty Name="yorumtarih" ColumnName="yorumtarih" />
+                <ScalarProperty Name="filmid" ColumnName="filmid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

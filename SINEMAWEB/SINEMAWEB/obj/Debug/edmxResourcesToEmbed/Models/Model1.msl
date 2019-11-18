@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SINEMADBModelStoreContainer" CdmEntityContainer="SINEMADBEntities">
+    <EntitySetMapping Name="bankatb">
+      <EntityTypeMapping TypeName="SINEMADBModel.bankatb">
+        <MappingFragment StoreEntitySet="bankatb">
+          <ScalarProperty Name="bankaid" ColumnName="bankaid" />
+          <ScalarProperty Name="hesapno" ColumnName="hesapno" />
+          <ScalarProperty Name="sonkullanmatarih" ColumnName="sonkullanmatarih" />
+          <ScalarProperty Name="guvenlikkodu" ColumnName="guvenlikkodu" />
+          <ScalarProperty Name="ibanno" ColumnName="ibanno" />
+          <ScalarProperty Name="bankaadi" ColumnName="bankaadi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="biletdurumtb">
+      <EntityTypeMapping TypeName="SINEMADBModel.biletdurumtb">
+        <MappingFragment StoreEntitySet="biletdurumtb">
+          <ScalarProperty Name="durumid" ColumnName="durumid" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bilettb">
+      <EntityTypeMapping TypeName="SINEMADBModel.bilettb">
+        <MappingFragment StoreEntitySet="bilettb">
+          <ScalarProperty Name="biletid" ColumnName="biletid" />
+          <ScalarProperty Name="kayittarih" ColumnName="kayittarih" />
+          <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+          <ScalarProperty Name="biletkayittarih" ColumnName="biletkayittarih" />
+          <ScalarProperty Name="filmid" ColumnName="filmid" />
+          <ScalarProperty Name="sahneid" ColumnName="sahneid" />
+          <ScalarProperty Name="koltukid" ColumnName="koltukid" />
+          <ScalarProperty Name="biletdurumid" ColumnName="biletdurumid" />
+          <ScalarProperty Name="bankaid" ColumnName="bankaid" />
+          <ScalarProperty Name="gorevliid" ColumnName="gorevliid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bloktb">
+      <EntityTypeMapping TypeName="SINEMADBModel.bloktb">
+        <MappingFragment StoreEntitySet="bloktb">
+          <ScalarProperty Name="blokid" ColumnName="blokid" />
+          <ScalarProperty Name="blokturu" ColumnName="blokturu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="filmtb">
+      <EntityTypeMapping TypeName="SINEMADBModel.filmtb">
+        <MappingFragment StoreEntitySet="filmtb">
+          <ScalarProperty Name="filmid" ColumnName="filmid" />
+          <ScalarProperty Name="filmadi" ColumnName="filmadi" />
+          <ScalarProperty Name="filmsüre" ColumnName="filmsüre" />
+          <ScalarProperty Name="filmtürü" ColumnName="filmtürü" />
+          <ScalarProperty Name="filmyonetmeni" ColumnName="filmyonetmeni" />
+          <ScalarProperty Name="filmoyunculari" ColumnName="filmoyunculari" />
+          <ScalarProperty Name="filmaciklama" ColumnName="filmaciklama" />
+          <ScalarProperty Name="filmfoto" ColumnName="filmfoto" />
+          <ScalarProperty Name="seansid" ColumnName="seansid" />
+          <ScalarProperty Name="salon1" ColumnName="salon1" />
+          <ScalarProperty Name="salon2" ColumnName="salon2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="filmturutb">
+      <EntityTypeMapping TypeName="SINEMADBModel.filmturutb">
+        <MappingFragment StoreEntitySet="filmturutb">
+          <ScalarProperty Name="turid" ColumnName="turid" />
+          <ScalarProperty Name="filmturu" ColumnName="filmturu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fiyat">
+      <EntityTypeMapping TypeName="SINEMADBModel.fiyat">
+        <MappingFragment StoreEntitySet="fiyat">
+          <ScalarProperty Name="fiyatid" ColumnName="fiyatid" />
+          <ScalarProperty Name="turid" ColumnName="turid" />
+          <ScalarProperty Name="fiyat1" ColumnName="fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorevlilertb">
+      <EntityTypeMapping TypeName="SINEMADBModel.gorevlilertb">
+        <MappingFragment StoreEntitySet="gorevlilertb">
+          <ScalarProperty Name="gorevliid" ColumnName="gorevliid" />
+          <ScalarProperty Name="gorevliad" ColumnName="gorevliad" />
+          <ScalarProperty Name="gorevlisoyad" ColumnName="gorevlisoyad" />
+          <ScalarProperty Name="gorevlitel" ColumnName="gorevlitel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iletisimtb">
+      <EntityTypeMapping TypeName="SINEMADBModel.iletisimtb">
+        <MappingFragment StoreEntitySet="iletisimtb">
+          <ScalarProperty Name="iletisimid" ColumnName="iletisimid" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="koltuktb">
+      <EntityTypeMapping TypeName="SINEMADBModel.koltuktb">
+        <MappingFragment StoreEntitySet="koltuktb">
+          <ScalarProperty Name="koltukid" ColumnName="koltukid" />
+          <ScalarProperty Name="blokid" ColumnName="blokid" />
+          <ScalarProperty Name="sahneid" ColumnName="sahneid" />
+          <ScalarProperty Name="koltuknumarasi" ColumnName="koltuknumarasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanicituru">
+      <EntityTypeMapping TypeName="SINEMADBModel.kullanicituru">
+        <MappingFragment StoreEntitySet="kullanicituru">
+          <ScalarProperty Name="kulturid" ColumnName="kulturid" />
+          <ScalarProperty Name="kullanicitur" ColumnName="kullanicitur" />
+          <ScalarProperty Name="indirimorani" ColumnName="indirimorani" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesajkututb">
+      <EntityTypeMapping TypeName="SINEMADBModel.mesajkututb">
+        <MappingFragment StoreEntitySet="mesajkututb">
+          <ScalarProperty Name="mesajid" ColumnName="mesajid" />
+          <ScalarProperty Name="konu" ColumnName="konu" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+          <ScalarProperty Name="mesajtarihi" ColumnName="mesajtarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salon">
+      <EntityTypeMapping TypeName="SINEMADBModel.salon">
+        <MappingFragment StoreEntitySet="salon">
+          <ScalarProperty Name="salonid" ColumnName="salonid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seanstb">
+      <EntityTypeMapping TypeName="SINEMADBModel.seanstb">
+        <MappingFragment StoreEntitySet="seanstb">
+          <ScalarProperty Name="seansid" ColumnName="seansid" />
+          <ScalarProperty Name="filmyayintarihi" ColumnName="filmyayintarihi" />
+          <ScalarProperty Name="filmsonyayintarihi" ColumnName="filmsonyayintarihi" />
+          <ScalarProperty Name="saat1" ColumnName="saat1" />
+          <ScalarProperty Name="saat2" ColumnName="saat2" />
+          <ScalarProperty Name="saat3" ColumnName="saat3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SINEMADBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uyetb">
+      <EntityTypeMapping TypeName="SINEMADBModel.uyetb">
+        <MappingFragment StoreEntitySet="uyetb">
+          <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="uyetelefon" ColumnName="uyetelefon" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="kullaniciturid" ColumnName="kullaniciturid" />
+          <ScalarProperty Name="tcno" ColumnName="tcno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yorumtb">
+      <EntityTypeMapping TypeName="SINEMADBModel.yorumtb">
+        <MappingFragment StoreEntitySet="yorumtb">
+          <ScalarProperty Name="yorumid" ColumnName="yorumid" />
+          <ScalarProperty Name="yorum" ColumnName="yorum" />
+          <ScalarProperty Name="uyeid" ColumnName="uyeid" />
+          <ScalarProperty Name="yorumtarih" ColumnName="yorumtarih" />
+          <ScalarProperty Name="filmid" ColumnName="filmid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

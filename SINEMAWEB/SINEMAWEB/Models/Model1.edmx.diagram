@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9cf85766aefe4c91814c760231c45d93" Name="Diagram1">
+        <EntityTypeShape EntityType="SINEMADBModel.bankatb" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.biletdurumtb" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.bilettb" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.bloktb" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.filmtb" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.filmturutb" Width="1.5" PointX="3.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.fiyat" Width="1.5" PointX="6" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.gorevlilertb" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.iletisimtb" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.koltuktb" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.kullanicituru" Width="1.5" PointX="3.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.mesajkututb" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.salon" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.seanstb" Width="1.5" PointX="3.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.uyetb" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SINEMADBModel.yorumtb" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="SINEMADBModel.FK_bilettb_bankatb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_bilettb_biletdurumtb1" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_bilettb_gorevlilertb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_bilettb_koltuktb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_bilettb_salon" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_bilettb_uyetb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_koltuktb_bloktb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_filmtb_filmturutb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_filmtb_salon" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_filmtb_salon1" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_filmtb_seanstb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_yorumtb_filmtb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_fiyat_filmturutb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_fiyat_kullanicituru" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_fiyat_kullanicituru1" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_koltuktb_salon" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_mesajkututb_uyetb" ManuallyRouted="false" />
+        <AssociationConnector Association="SINEMADBModel.FK_yorumtb_uyetb" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

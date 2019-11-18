@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Giris";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h5>@ViewBag.HATA</h5>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+   
+    @using (Html.BeginForm("Giris", "Manage", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="container">
+            <div>
+                <div class="jumbotron">
+                    <h1>Kullanıcı Giriş Sayfasıdır</h1>
+                    <p>Tüm Alanlar Zorunludur</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">E-posta:</label>
+                    <div class="col-sm-2">
+                        <input type="text" name="mail" placeholder="E-posta Giriniz:" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Şifre:</label>
+                    <div class="col-sm-2">
+                        <input type="password" name="sifre" placeholder="Sifre Giriniz: En fazla 8 karakter!!" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2">
+                        <button class="btn btn-success" type="submit" value="Giris">Giriş Yap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
