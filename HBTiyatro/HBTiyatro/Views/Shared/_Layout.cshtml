@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width" />*@
+    <title>Hatay Tiyatro</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                @Html.ActionLink("Hatay Tiyatro", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                @*<a class="navbar-brand" href="#">Hatay  Tiyatro</a>*@
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                @*<li>@Html.ActionLink("Oyunlar", "Oyunlar", "Home")</li>*@
+                <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            İlçeler
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Antakya", "Antakya", "Home")</li>
+                            <li>@Html.ActionLink("İskenderun", "Iskenderun", "Home")</li>
+                            <li>@Html.ActionLink("Defne", "Defne", "Home")</li>
+                        </ul>
+                    </li>
+                <li>@Html.ActionLink("Oyuncular", "Oyuncular", "Home")</li>
+                <li>@Html.ActionLink("Hakkımızda", "Hakkimizda", "Home")</li>
+                <li>@Html.ActionLink("İletişim", "Iletisim", "Home")</li>
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                @if (Session["EPosta"] == null)
+                {
+                    <li>@Html.ActionLink("Üye Ol", "Create", "Manage")</li>
+                    <li>@Html.ActionLink("Giriş Yap", "Giris", "Manage")</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Çıkış Yap", "Cikis", "Manage")</li>
+                }
+                @*<li><a href="#"><span class="glyphicon glyphicon-user"></span>Üye Ol</a></li>*@
+                @*<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Giriş</a></li>*@
+            </ul>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+
+        @*@Scripts.Render("~/bundles/jquery")*@
+        @RenderSection("scripts", required: false)
+
+    </div>
+
+
+</body>
+</html>

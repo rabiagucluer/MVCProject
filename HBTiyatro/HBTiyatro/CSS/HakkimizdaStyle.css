@@ -1,0 +1,40 @@
+﻿.content {
+    border: 1px solid #aa1e8e;
+    padding: 10px;
+    margin: 10px;
+    background: #aa1e8e;
+    font-size: 50px;
+}
+
+/*#container {
+width:100%;
+height:auto;
+min-height:500px;
+}*/
+
+/*@media screen and  (max-width:500px) and (min-width:100px){*/
+	/*Masa Üstü css kodlarımız*/
+/*}*/
+
+
+
+/*@media screen and (max-width:760px){
+	/*Tablet  css kodlarımız*/
+/*}/*/
+
+/*@media screen and (max-width:479px){
+	/*Mobil css kodlarımız
+}*/
+
+
+/*span {
+    text-align: left;
+    font-size: 15px;
+    color: #000000;
+    font-family: 'Californian FB';
+}*/
+
+/*.img-responsive{
+    max-width:100%;
+    height:auto;
+}*/

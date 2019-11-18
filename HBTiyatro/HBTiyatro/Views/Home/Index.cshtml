@@ -1,0 +1,157 @@
+﻿@model HBTiyatro.ViewModel.SehirViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/scripts/slider.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/CSS/StyleS1.css" />
+    <link href="~/CSS/AntakyaStyle.css" rel="stylesheet" />
+    <link href="~/CSS/HakkimizdaStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" style="background-color:transparent">
+            @*<h2 style="text-align:center">Hatay Büyükşehir Belediyesi Şehir Tiyatrosu</h2>*@
+            <div class="form-group row">
+                @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+                {
+                    <div class="col-md-4">
+                        <h3>İlce Seç</h3>
+                        @Html.DropDownListFor(m => m.IlcelerID, Model.ilcelist)
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Tiyatro Seç</h3>
+                        @Html.DropDownListFor(m => m.TiyatroID, Model.Tiyatrolist)
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Sahne Seç</h3>
+                        @Html.DropDownListFor(m => m.SahneId, Model.Sahnelist)
+                    </div>
+
+
+                    @*<a href="http://localhost:49585/Oyun/oyun1"><input type="button" value="-Git-" /></a>*@
+                }
+
+                @section scripts{
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("#IlcelerID").change(function () {
+                                var id = $("#IlcelerID").val();
+                                var Tiyatrolist = $("#TiyatroID");
+                                Tiyatrolist.empty();
+                                $.ajax({
+                                    url: '/Home/Tiyatrolist',
+                                    type: 'POST',
+                                    datatype: 'json',
+                                    data: { 'id': id },
+                                    success: function (data) {
+                                        $.each(data, function (index, option) {
+                                            Tiyatrolist.append('<option value=' + option.Value + '> ' + option.Text + '</option>');
+
+                                        });
+                                    }
+                                });
+                            });
+
+                            //$("#TiyatroID").change(function () {
+                            //    var id = $("#TiyatroID").val();
+                            //    var Sahnelist = $("#SahneId");
+                            //    Sahnelist.empty();
+                            //    $.ajax({
+                            //        url: '/Home/Sahnelist',
+                            //        type: 'POST',
+                            //        datatype: 'json',
+                            //        data: { 'id': id },
+                            //        success: function (data) {
+                            //            $.each(data, function (index, option) {
+                            //                Sahnelist.append('<option value=' + option.Value + '> ' + option.Text + '</option>');
+                            //            });
+                            //        }
+                            //    });
+                            //});
+                        });
+                    </script>
+                    @*<script type="text/javascript">
+                            $(document).ready(function () {
+                                $("#IlcelerID").change(function () {
+                                    var a = document.getElementById
+                                    $("#bb").val(a);
+
+                                });
+                            });
+                        </script>*@
+                    @*<script type="text/javascript">
+
+                            $(document).ready(function () {
+                                $("#TiyatroID").change(function () {
+                                    var donen = $("#TiyatroID").val();
+                                    if () {URL.ACTİON
+
+                                    }
+                                });
+                            });
+
+                        </script>*@
+                }
+            </div>
+
+            <div class="form-group row">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="slider">
+                            <a href="#" class="onceki"><</a>
+                            <a href="#" class="sonraki">></a>
+                            <ul class="slider_liste">
+                                <li>
+                                    <a href="#">
+                                        <img class="img-responsive img-thumbnail" src="~/Resimler/425073.jpg" style="width:1100px; height:600px; object-fit:cover" />
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-responsive img-thumbnail" src="~/Resimler/7488b072f817428c95041dedfae7d3c21510916895 - Copy.jpg" style="width:1100px; height:600px; object-fit:cover" />
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-responsive img-thumbnail" src="~/Resimler/slideryeni.jpg" style="width:1100px; height:600px; object-fit:cover" />
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-responsive img-thumbnail" src="~/Resimler/aa.jpg" style="width:1100px; height:600px; object-fit:cover" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-responsive img-thumbnail" src="~/Resimler/bb.jpg" style="width:1100px; height:600px; object-fit:cover" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+
+                    <div class="antakya">
+                        <h4 style="color:white;"><b>VİZYONDAKİLER</b></h4>
+
+                    </div>
+                    <span style="font-size:20px;">Vizyonda bir oyunumuz bulunmamaktadır.</span>
+                </div>
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>

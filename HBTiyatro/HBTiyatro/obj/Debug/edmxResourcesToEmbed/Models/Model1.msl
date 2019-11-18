@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TIYATROModelStoreContainer" CdmEntityContainer="TIYATROEntities">
+    <EntitySetMapping Name="Adres">
+      <EntityTypeMapping TypeName="TIYATROModel.Adres">
+        <MappingFragment StoreEntitySet="Adres">
+          <ScalarProperty Name="AdresID" ColumnName="AdresID" />
+          <ScalarProperty Name="Adres1" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="IlceNo" ColumnName="IlceNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banka">
+      <EntityTypeMapping TypeName="TIYATROModel.Banka">
+        <MappingFragment StoreEntitySet="Banka">
+          <ScalarProperty Name="BankaID" ColumnName="BankaID" />
+          <ScalarProperty Name="HesapNo" ColumnName="HesapNo" />
+          <ScalarProperty Name="SonKullanmaTarihi" ColumnName="SonKullanmaTarihi" />
+          <ScalarProperty Name="guvanlikkodu" ColumnName="guvanlikkodu" />
+          <ScalarProperty Name="IBANNo" ColumnName="IBANNo" />
+          <ScalarProperty Name="BankaAdi" ColumnName="BankaAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bilet">
+      <EntityTypeMapping TypeName="TIYATROModel.Bilet">
+        <MappingFragment StoreEntitySet="Bilet">
+          <ScalarProperty Name="BiletID" ColumnName="BiletID" />
+          <ScalarProperty Name="KayitTarih" ColumnName="KayitTarih" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="BiletNo" ColumnName="BiletNo" />
+          <ScalarProperty Name="OyunID" ColumnName="OyunID" />
+          <ScalarProperty Name="SahneID" ColumnName="SahneID" />
+          <ScalarProperty Name="FiyatID" ColumnName="FiyatID" />
+          <ScalarProperty Name="KoltukID" ColumnName="KoltukID" />
+          <ScalarProperty Name="BankaID" ColumnName="BankaID" />
+          <ScalarProperty Name="BiletDurumID" ColumnName="BiletDurumID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiletDurum">
+      <EntityTypeMapping TypeName="TIYATROModel.BiletDurum">
+        <MappingFragment StoreEntitySet="BiletDurum">
+          <ScalarProperty Name="DurumID" ColumnName="DurumID" />
+          <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blok">
+      <EntityTypeMapping TypeName="TIYATROModel.Blok">
+        <MappingFragment StoreEntitySet="Blok">
+          <ScalarProperty Name="BlokID" ColumnName="BlokID" />
+          <ScalarProperty Name="BlokTuru" ColumnName="BlokTuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fiyat">
+      <EntityTypeMapping TypeName="TIYATROModel.Fiyat">
+        <MappingFragment StoreEntitySet="Fiyat">
+          <ScalarProperty Name="FiyatId" ColumnName="FiyatId" />
+          <ScalarProperty Name="TurID" ColumnName="TurID" />
+          <ScalarProperty Name="Fiyat1" ColumnName="Fiyat" />
+          <ScalarProperty Name="KDV" ColumnName="KDV" />
+          <ScalarProperty Name="KarOrani" ColumnName="KarOrani" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fotograflar">
+      <EntityTypeMapping TypeName="TIYATROModel.Fotograflar">
+        <MappingFragment StoreEntitySet="Fotograflar">
+          <ScalarProperty Name="FotoId" ColumnName="FotoId" />
+          <ScalarProperty Name="FotoAdi" ColumnName="FotoAdi" />
+          <ScalarProperty Name="FotoLink" ColumnName="FotoLink" />
+          <ScalarProperty Name="OyunNo" ColumnName="OyunNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ilceler">
+      <EntityTypeMapping TypeName="TIYATROModel.Ilceler">
+        <MappingFragment StoreEntitySet="Ilceler">
+          <ScalarProperty Name="IlcelerID" ColumnName="IlcelerID" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Iletisim">
+      <EntityTypeMapping TypeName="TIYATROModel.Iletisim">
+        <MappingFragment StoreEntitySet="Iletisim">
+          <ScalarProperty Name="IletisimID" ColumnName="IletisimID" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Koltuk">
+      <EntityTypeMapping TypeName="TIYATROModel.Koltuk">
+        <MappingFragment StoreEntitySet="Koltuk">
+          <ScalarProperty Name="KoltukID" ColumnName="KoltukID" />
+          <ScalarProperty Name="BlokID" ColumnName="BlokID" />
+          <ScalarProperty Name="SahneID" ColumnName="SahneID" />
+          <ScalarProperty Name="KoltukNumarasi" ColumnName="KoltukNumarasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="TIYATROModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="SifreTekrari" ColumnName="SifreTekrari" />
+          <ScalarProperty Name="KullaniciSoyadi" ColumnName="KullaniciSoyadi" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="EPosta" ColumnName="EPosta" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="MesajID" ColumnName="MesajID" />
+          <ScalarProperty Name="UyeKodu" ColumnName="UyeKodu" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciTuru">
+      <EntityTypeMapping TypeName="TIYATROModel.KullaniciTuru">
+        <MappingFragment StoreEntitySet="KullaniciTuru">
+          <ScalarProperty Name="TurId" ColumnName="TurId" />
+          <ScalarProperty Name="IndirimOrani" ColumnName="IndirimOrani" />
+          <ScalarProperty Name="TurAdi" ColumnName="TurAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MesajKutusu">
+      <EntityTypeMapping TypeName="TIYATROModel.MesajKutusu">
+        <MappingFragment StoreEntitySet="MesajKutusu">
+          <ScalarProperty Name="MesajID" ColumnName="MesajID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Konu" ColumnName="Konu" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oyuncular">
+      <EntityTypeMapping TypeName="TIYATROModel.Oyuncular">
+        <MappingFragment StoreEntitySet="Oyuncular">
+          <ScalarProperty Name="OyuncuId" ColumnName="OyuncuId" />
+          <ScalarProperty Name="OyuncuAdi" ColumnName="OyuncuAdi" />
+          <ScalarProperty Name="OyuncuResimLinki" ColumnName="OyuncuResimLinki" />
+          <ScalarProperty Name="OyunID" ColumnName="OyunID" />
+          <ScalarProperty Name="OyuncuSoyadi" ColumnName="OyuncuSoyadi" />
+          <ScalarProperty Name="Yazar" ColumnName="Yazar" />
+          <ScalarProperty Name="Yonetmen" ColumnName="Yonetmen" />
+          <ScalarProperty Name="Ceviren" ColumnName="Ceviren" />
+          <ScalarProperty Name="Muzik" ColumnName="Muzik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oyunlar">
+      <EntityTypeMapping TypeName="TIYATROModel.Oyunlar">
+        <MappingFragment StoreEntitySet="Oyunlar">
+          <ScalarProperty Name="OyunId" ColumnName="OyunId" />
+          <ScalarProperty Name="OyunAdi" ColumnName="OyunAdi" />
+          <ScalarProperty Name="Imdb" ColumnName="Imdb" />
+          <ScalarProperty Name="OyunSuresi" ColumnName="OyunSuresi" />
+          <ScalarProperty Name="OyunFiyati" ColumnName="OyunFiyati" />
+          <ScalarProperty Name="OyunTarih" ColumnName="OyunTarih" />
+          <ScalarProperty Name="OyunDurumu" ColumnName="OyunDurumu" />
+          <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
+          <ScalarProperty Name="OyunTuruID" ColumnName="OyunTuruID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OyunTakvimi">
+      <EntityTypeMapping TypeName="TIYATROModel.OyunTakvimi">
+        <MappingFragment StoreEntitySet="OyunTakvimi">
+          <ScalarProperty Name="TakvimId" ColumnName="TakvimId" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Aylar" ColumnName="Aylar" />
+          <ScalarProperty Name="OyunNo" ColumnName="OyunNo" />
+          <ScalarProperty Name="Gunler" ColumnName="Gunler" />
+          <ScalarProperty Name="Saat" ColumnName="Saat" />
+          <ScalarProperty Name="SahneNo" ColumnName="SahneNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OyunTuru">
+      <EntityTypeMapping TypeName="TIYATROModel.OyunTuru">
+        <MappingFragment StoreEntitySet="OyunTuru">
+          <ScalarProperty Name="OyunTuruID" ColumnName="OyunTuruID" />
+          <ScalarProperty Name="OyunTuru1" ColumnName="OyunTuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="TIYATROModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
+          <ScalarProperty Name="RolTuru" ColumnName="RolTuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sahneler">
+      <EntityTypeMapping TypeName="TIYATROModel.Sahneler">
+        <MappingFragment StoreEntitySet="Sahneler">
+          <ScalarProperty Name="SahneId" ColumnName="SahneId" />
+          <ScalarProperty Name="SahneAdi" ColumnName="SahneAdi" />
+          <ScalarProperty Name="OyunlarNo" ColumnName="OyunlarNo" />
+          <ScalarProperty Name="SahneAdresi" ColumnName="SahneAdresi" />
+          <ScalarProperty Name="SahneTelefon" ColumnName="SahneTelefon" />
+          <ScalarProperty Name="TiyatroNo" ColumnName="TiyatroNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TIYATROModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tiyatrolar">
+      <EntityTypeMapping TypeName="TIYATROModel.Tiyatrolar">
+        <MappingFragment StoreEntitySet="Tiyatrolar">
+          <ScalarProperty Name="TiyatroID" ColumnName="TiyatroID" />
+          <ScalarProperty Name="TiyatroAdi" ColumnName="TiyatroAdi" />
+          <ScalarProperty Name="AdresID" ColumnName="AdresID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video">
+      <EntityTypeMapping TypeName="TIYATROModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="VideoId" ColumnName="VideoId" />
+          <ScalarProperty Name="VideoAdi" ColumnName="VideoAdi" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorumlar">
+      <EntityTypeMapping TypeName="TIYATROModel.Yorumlar">
+        <MappingFragment StoreEntitySet="Yorumlar">
+          <ScalarProperty Name="YorumId" ColumnName="YorumId" />
+          <ScalarProperty Name="Konu" ColumnName="Konu" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="OyunID" ColumnName="OyunID" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TIYATROModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TIYATROModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TIYATROModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TIYATROModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIYATROModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TIYATROModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIYATROModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TIYATROModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TIYATROModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

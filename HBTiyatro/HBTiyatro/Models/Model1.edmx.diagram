@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f6c79ca50f324671a0a3d913ab0e0262" Name="Diagram1">
+        <EntityTypeShape EntityType="TIYATROModel.Adres" Width="1.5" PointX="3.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Banka" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Bilet" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.BiletDurum" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Blok" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Fiyat" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Fotograflar" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Ilceler" Width="1.5" PointX="1.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Iletisim" Width="1.5" PointX="8.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Koltuk" Width="1.5" PointX="10.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Kullanici" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.KullaniciTuru" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.MesajKutusu" Width="1.5" PointX="8.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Oyuncular" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Oyunlar" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.OyunTakvimi" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.OyunTuru" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Rol" Width="1.5" PointX="3.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Sahneler" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Tiyatrolar" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Video" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIYATROModel.Yorumlar" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="TIYATROModel.FK_Adres_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Tiyatrolar_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_Banka" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_BiletDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_Fiyat" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_Koltuk" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_Kullanci" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_Oyunlar" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Bilet_Sahneler" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Koltuk_Blok" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Fiyat_KullaniciTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Fotograflar_Oyunlar" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Iletisim_Kullanci" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Koltuk_Sahneler" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Kullanci_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_MesajKutusu_Kullanci" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Yorumlar_Kullanci" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Oyunlar_KullaniciTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Oyuncular_Oyunlar" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Oyunlar_OyunTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Oyunlar_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_OyunTakvimi_Oyunlar" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Sahneler_Oyunlar" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Yorumlar_Oyunlar" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_OyunTakvimi_Sahneler" ManuallyRouted="false" />
+        <AssociationConnector Association="TIYATROModel.FK_Sahneler_Tiyatrolar" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

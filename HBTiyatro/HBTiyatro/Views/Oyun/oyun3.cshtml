@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "oyun3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    @*<script type="text/javascript">
+
+		function ileri(){
+
+			history.back()
+		}
+
+    </script>*@
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" style="background-color:#C78B98">
+            <div class="form-group row">
+                <h2 style="text-align:center; color:white;">İKİ BEKAR</h2>
+                <div class="col-xs-6 col-md-6">
+                    <img class="img-responsive img-thumbnail" src="~/Resimler/3.oyun.jpg" width="450" height="250" />
+                </div>
+                <div class="col-md-6">
+                    <h4 style="text-align:right; color:white ">
+                        <br />
+                        Yazan: Sam Bobrick
+                        <br />
+                        Çeviren: Ekin Tunçay Turan
+                        <br />
+                        Yöneten: Emre Kınay
+                        <br />
+                        Müzik: Serdar Aslan
+                        <br />
+                        Dekor: Saldıray Çakar
+                        <br />
+                        Ses ve Işık: Erkan Kalkan
+                        <br />
+                        Dramaturg: Ayşegül Hardern
+                        <br />
+                        <br />
+                        Oyuncular:
+                        <br />
+                        Emre Kınay,
+                        <br />
+                        Evrim Alasya
+                    </h4>
+                    <br />
+                    <br />
+                    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:20px; text-align:right; color:white">
+                        Shanette ile Jack'in komik hikayesini anlatan "İki Bekar" tiyatro oyunu, izleyicisi ile buluşuyor.
+
+                        "Arkadaşlarının çöpçatanlığıyla düğün davetinde aynı masaya oturunca başlıyor Anette olan Shanette ile Jack'in komik hikayesi...
+
+                        Shanette adım adım izliyor Jack'i.. Jack, ilişkiden, bağlanmaktan, terkedilmekten, aldatılmaktan ve soyulmaktan korkuyor. En çok da deli olduğu kadar çatlak Shanette'ten korkuyor. Ama Shanette kararlı ve ısrarcı... Vazgeçmeye hiç niyeti yok.
+                    </p>
+
+                    @*<a href="~/Views/Home/Iskenderun.cshtml"></a>*@
+                    @*<input type="button" value="geri" onClick="javascript:history.go(-1)"/>*@
+                    <span style="font-size:30px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        @Html.ActionLink("Geri Dön", "Iskenderun", "Home")
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
